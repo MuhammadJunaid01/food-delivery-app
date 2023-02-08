@@ -1,0 +1,7 @@
+https://reactnavigation.org/docs/hello-react-navigation
+https://callstack.github.io/react-native-paper/card.html
+
+https://www.figma.com/file/wTYrmRqUjHrqzmzHXNFgla/E-Commerce-App-Design-(Community)?node-id=0%3A1&t=SJJipSM7VO4CVMs5-0
+
+npx react-native run-android
+
