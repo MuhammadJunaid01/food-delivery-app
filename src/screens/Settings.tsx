@@ -2,12 +2,12 @@
 import {View, Text} from 'react-native';
 import React from 'react';
 
-const bottomTab = () => {
+const Settings = () => {
   return (
     <View>
-      <Text>bottomTab</Text>
+      <Text>Settings</Text>
     </View>
   );
 };
 
-export default bottomTab;
+export default Settings;
