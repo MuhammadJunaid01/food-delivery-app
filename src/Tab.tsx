@@ -1,9 +1,10 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable prettier/prettier */
 
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
-import Settings from './screens/Settings';
+import SettingsScreen from './screens/SettingsScreen';
 import Icons from 'react-native-vector-icons/AntDesign';
 import {StyleSheet} from 'react-native';
 const Tab = createBottomTabNavigator();
@@ -22,7 +23,7 @@ const Tabs = () => {
       />
       <Tab.Screen
         name="Setting"
-        component={Settings}
+        component={SettingsScreen}
         options={{
           headerShown: false,
           tabBarIcon: ({focused}) => (

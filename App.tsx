@@ -7,13 +7,10 @@
 
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
+import MainLayoute from './src/layoutes/MainLayoute';
 import Tabs from './src/Tab';
 
 function App() {
-  return (
-    <NavigationContainer>
-      <Tabs />
-    </NavigationContainer>
-  );
+  return <MainLayoute />;
 }
 export default App;
