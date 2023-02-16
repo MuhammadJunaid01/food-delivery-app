@@ -1,6 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {NavigationContainer} from '@react-navigation/native';
 import React, {useState} from 'react';
+import Navigate from '../Navigate';
 import GetStartedScreen from '../screens/GetStartedScreen';
 import Tabs from '../Tab';
 
@@ -9,6 +10,7 @@ const MainLayoute = () => {
   if (isLoggedIn) {
     return (
       <NavigationContainer>
+        <Navigate />
         <Tabs />
       </NavigationContainer>
     );

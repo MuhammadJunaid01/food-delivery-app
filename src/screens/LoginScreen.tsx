@@ -1,13 +1,30 @@
 /* eslint-disable prettier/prettier */
-import {View, Text} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
+import {primary_color} from '../../libs/colors';
 
-const LoginScreen = () => {
+export default function LoginScreen() {
   return (
-    <View>
-      <Text>LoginScreen</Text>
+    <View style={styles.container}>
+      <Text style={styles.headingText}>LoginScreen</Text>
     </View>
   );
+}
+LoginScreen.options = {
+  headerStyle: {
+    backgroundColor: 'red',
+  },
 };
-
-export default LoginScreen;
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: primary_color,
+  },
+  headingText: {
+    fontSize: 40,
+    textAlign: 'center',
+    color: 'red',
+  },
+});

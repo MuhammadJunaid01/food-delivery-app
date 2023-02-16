@@ -14,11 +14,17 @@ export default function TouchableBtn({
   margin,
   onpress,
 }: TouchableBtnProps) {
-  console.log(bgColor);
   return (
     <View>
       <TouchableOpacity
-        style={[styles.btn, {backgroundColor: bgColor ? bgColor : white_color}]}
+        style={[
+          styles.btn,
+          {
+            backgroundColor: bgColor ? bgColor : white_color,
+            height: height,
+            width: width,
+          },
+        ]}
         onPress={onpress}>
         <Text style={[styles.label, {color: color ? color : white_color}]}>
           {label}
@@ -30,8 +36,6 @@ export default function TouchableBtn({
 
 const styles = StyleSheet.create({
   btn: {
-    height: 46,
-    width: 220,
     position: 'absolute',
     bottom: -155,
     marginLeft: 30,

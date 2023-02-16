@@ -2,10 +2,15 @@
 import {View, Image, StyleSheet} from 'react-native';
 import React from 'react';
 import {Text} from 'react-native';
+
 import {primary_color, white_color} from '../../libs/colors';
 import TouchableBtn from '../../ui/touchableOpacity';
 
-const GetStartedScreen = () => {
+const GetStartedScreen = ({navigation}) => {
+  const handlePress = () => {
+    console.log('clicked');
+    navigation.navigate('Login');
+  };
   return (
     <View style={styles.container}>
       <Text style={styles.heading}>Find your Gadget</Text>
@@ -15,10 +20,14 @@ const GetStartedScreen = () => {
           source={require('../assets/images/getStarted.png')}
         />
         {/* <Text style={styles.blur} /> */}
+
         <TouchableBtn
+          onpress={handlePress}
           label="Get started"
           bgColor={white_color}
           color={primary_color}
+          height={46}
+          width={220}
         />
       </View>
     </View>
@@ -49,6 +58,11 @@ const styles = StyleSheet.create({
     // marginBottom: 15,
     marginTop: -120,
     marginBottom: 15,
+  },
+  link: {
+    fontSize: 24,
+    textAlign: 'center',
+    marginVertical: 40,
   },
 });
 export default GetStartedScreen;

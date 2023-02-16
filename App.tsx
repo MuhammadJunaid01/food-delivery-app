@@ -11,6 +11,10 @@ import MainLayoute from './src/layoutes/MainLayoute';
 import Tabs from './src/Tab';
 
 function App() {
-  return <MainLayoute />;
+  return (
+    <NavigationContainer>
+      <Tabs />
+    </NavigationContainer>
+  );
 }
 export default App;
