@@ -3,7 +3,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import React, {useState} from 'react';
 import Navigate from '../Navigate';
 import GetStartedScreen from '../screens/GetStartedScreen';
-import Tabs from '../Tab';
+import Tabs from '../navigation/Tab';
 
 const MainLayoute = () => {
   const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);

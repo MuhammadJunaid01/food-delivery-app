@@ -1,4 +1,6 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable prettier/prettier */
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {TouchableBtnProps} from '../../libs/interfaces';
@@ -20,7 +22,7 @@ export default function TouchableBtn({
         style={[
           styles.btn,
           {
-            backgroundColor: bgColor ? bgColor : white_color,
+            backgroundColor: bgColor ? bgColor : 'red',
             height: height,
             width: width,
           },

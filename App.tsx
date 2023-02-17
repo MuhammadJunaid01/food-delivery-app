@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /**
  * Sample React Native App
  * https://github.com/facebook/react-native
@@ -7,13 +8,12 @@
 
 import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
-import MainLayoute from './src/layoutes/MainLayoute';
-import Tabs from './src/Tab';
-
+import DrawerNavigator from './src/navigation/DrawerNavigator';
+import 'react-native-gesture-handler';
 function App() {
   return (
     <NavigationContainer>
-      <Tabs />
+      <DrawerNavigator />
     </NavigationContainer>
   );
 }
