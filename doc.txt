@@ -8,3 +8,7 @@ ui kit : https://www.figma.com/file/T1As64NDC1clDT3CUdnbSc/Ecommerce-App-UI-Kit-
 
 npx react-native run-android
 
+
+ui kit v2 https://www.figma.com/file/65U3ukVkWyTUR1MnfV5072/Evira---E-Commerce-%26-Online-Shop-App-UI-Kit-(Community)?node-id=0%3A1&t=OoRQ9560rJ1hnDbs-0
+
+onboarding resources https://www.npmjs.com/package/react-native-onboarding-swiper

@@ -13,6 +13,7 @@ const HomeScreen = () => {
         <SearchBox />
       </Text>
       <Text style={styles.text}>HomeScreen</Text>
+      <Text style={styles.text}>Hello</Text>
     </View>
   );
 };
