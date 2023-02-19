@@ -1,14 +1,17 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import BottomTabNavigator from './TabNavigator';
 import {ContactStackNavigator} from './MainNavigator';
 import {primary_color} from '../../libs/colors';
+import DrawerContent from '../../ui/drawer';
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {
   return (
     <Drawer.Navigator
+      drawerContent={props => <DrawerContent {...props} />}
       screenOptions={{
         headerStyle: {backgroundColor: primary_color},
         headerBackgroundContainerStyle: {},

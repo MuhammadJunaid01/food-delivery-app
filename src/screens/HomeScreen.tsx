@@ -4,11 +4,12 @@
 import {View, Text, StyleSheet} from 'react-native';
 import React from 'react';
 import {COLORS, SIZES} from '../../libs/theme';
+import AppBar from '../../ui/appBar';
 
 const HomeScreen = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>HomeScreen</Text>
+      <AppBar />
       <Text style={styles.text}>Hello</Text>
     </View>
   );
