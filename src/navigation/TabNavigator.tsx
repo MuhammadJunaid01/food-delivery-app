@@ -7,6 +7,7 @@ import MainNavigator, {ContactStackNavigator} from './MainNavigator';
 import useAuth from '../../libs/hooks/useAuth';
 import Icons from 'react-native-vector-icons/AntDesign';
 import {gray_100, primary_color} from '../../libs/colors';
+import {COLORS} from '../../libs/theme';
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
@@ -18,7 +19,7 @@ export default function BottomTabNavigator() {
         component={MainNavigator}
         options={{
           tabBarStyle: isLogedIn
-            ? {backgroundColor: 'white', paddingHorizontal: 10, height: 50}
+            ? {backgroundColor: COLORS.dark, paddingHorizontal: 10, height: 50}
             : {display: 'none'},
           tabBarIcon: ({focused}) => (
             <Icons

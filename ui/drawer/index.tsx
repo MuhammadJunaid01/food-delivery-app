@@ -1,3 +1,6 @@
+/* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import {
   ScrollView,
@@ -8,29 +11,150 @@ import {
 } from 'react-native';
 import React from 'react';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
-import {Drawer} from 'react-native-paper';
+import Icons from 'react-native-vector-icons/AntDesign';
+import IconsMa from 'react-native-vector-icons/MaterialCommunityIcons';
+import IconsEn from 'react-native-vector-icons/MaterialCommunityIcons';
+import IconsFa from 'react-native-vector-icons/FontAwesome';
+import {
+  Avatar,
+  Caption,
+  Drawer,
+  Switch,
+  Title,
+  TouchableRipple,
+} from 'react-native-paper';
+import {COLORS} from '../../libs/theme';
 export default function DrawerContent(
   props: JSX.IntrinsicAttributes &
     ScrollViewProps & {
       children: React.ReactNode;
     } & React.RefAttributes<ScrollView>,
 ) {
+  // function signOut() {
+  //   throw new Error('Function not implemented.');
+  // }
+
   return (
-    <View style={styles.container}>
+    <View style={{flex: 1, backgroundColor: COLORS.lightGrey}}>
       <DrawerContentScrollView {...props}>
-        <View>
-          <Text>Main Text</Text>
+        <View style={styles.drawerContent}>
+          <View style={styles.userInfoSection}>
+            <View style={{flexDirection: 'row', marginTop: 15}}>
+              <Avatar.Image
+                source={require('../../src/assets/images/user.jpg')}
+                size={50}
+              />
+              <View style={{marginLeft: 15, flexDirection: 'column'}}>
+                <Title style={styles.title}>M Junaid</Title>
+                <Caption style={styles.caption}>m.jun..20@junaid@.com</Caption>
+              </View>
+            </View>
+          </View>
+
+          <Drawer.Section style={styles.drawerSection}>
+            <DrawerItem
+              icon={() => <Icons name="home" size={25} color={COLORS.dark} />}
+              label="Home"
+              onPress={() => {}}
+            />
+            <DrawerItem
+              icon={() => (
+                <IconsMa name="account" size={25} color={COLORS.dark} />
+              )}
+              label="Profile"
+              onPress={() => {}}
+            />
+            <DrawerItem
+              icon={() => (
+                <IconsEn name="bookmark" size={25} color={COLORS.dark} />
+              )}
+              label="Bookmarks"
+              onPress={() => {}}
+            />
+            <DrawerItem
+              icon={() => (
+                <Icons name="setting" size={25} color={COLORS.dark} />
+              )}
+              label="Settings"
+              onPress={() => {}}
+            />
+            <DrawerItem
+              icon={() => (
+                <IconsFa name="support" size={25} color={COLORS.dark} />
+              )}
+              label="Support"
+              onPress={() => {}}
+            />
+          </Drawer.Section>
+          <Drawer.Section title="Preferences">
+            <TouchableRipple onPress={() => {}}>
+              <View style={styles.preference}>
+                <Text style={{color: COLORS.dark}}>Dark Theme</Text>
+                <View pointerEvents="none">
+                  <Switch />
+                </View>
+              </View>
+            </TouchableRipple>
+          </Drawer.Section>
         </View>
       </DrawerContentScrollView>
-      <Drawer.Section>
-        <Drawer.Item label="hello" />
+      <Drawer.Section style={styles.bottomDrawerSection}>
+        <DrawerItem
+          // icon={({color, size}) => (
+          //   <Icon name="exit-to-app" color={color} size={size} />
+          // )}
+          label="Sign Out"
+          onPress={() => {}}
+        />
       </Drawer.Section>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
+  drawerContent: {
+    flex: 1,
+  },
+  userInfoSection: {
+    paddingLeft: 20,
+  },
+  title: {
+    fontSize: 16,
+    marginTop: 3,
+    fontWeight: 'bold',
+    color: COLORS.dark,
+  },
+  caption: {
+    fontSize: 14,
+    lineHeight: 14,
+    color: COLORS.dark,
+  },
+  row: {
+    marginTop: 20,
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  section: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginRight: 15,
+  },
+  paragraph: {
+    fontWeight: 'bold',
+    marginRight: 3,
+  },
+  drawerSection: {
+    marginTop: 15,
+  },
+  bottomDrawerSection: {
+    marginBottom: 15,
+    borderTopColor: '#f4f4f4',
+    borderTopWidth: 1,
+  },
+  preference: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingVertical: 12,
+    paddingHorizontal: 16,
   },
 });
