@@ -1,8 +1,9 @@
 /* eslint-disable prettier/prettier */
 import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {primary_color, white_color} from '../../libs/colors';
+import {white_color} from '../../libs/colors';
 import LoginForm from '../../ui/login';
+import {COLORS} from '../../libs/theme';
 
 export default function LoginScreen({}) {
   return (
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     // justifyContent: 'center',
     // alignItems: 'center',
-    backgroundColor: primary_color,
+    backgroundColor: COLORS.dark,
     overflow: 'hidden',
   },
   login: {

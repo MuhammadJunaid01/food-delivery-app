@@ -7,18 +7,14 @@ import {
   TextInput,
 } from 'react-native';
 import React, {useState} from 'react';
-import {
-  black_color,
-  gray_100,
-  primary_color,
-  white_color,
-} from '../../libs/colors';
+import {black_color, gray_100, white_color} from '../../libs/colors';
 import Icon from 'react-native-vector-icons/Fontisto';
 import Icons from 'react-native-vector-icons/Entypo';
+import {COLORS} from '../../libs/theme';
 export default function LoginForm() {
   const [email, setEmail] = useState('rosina@company.com');
   const [password, setPassword] = useState('');
-  const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [isPasswordVisible, setIsPasswordVisible] = useState<boolean>(false);
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
@@ -118,25 +114,25 @@ const styles = StyleSheet.create({
     marginLeft: 50,
   },
   forgotPass: {
-    color: primary_color,
+    color: COLORS.BlueViolet,
     marginVertical: 5,
     marginLeft: 20,
     fontSize: 17,
   },
   loginBtn: {
-    backgroundColor: primary_color,
+    backgroundColor: COLORS.BlueViolet,
     paddingVertical: 13,
     width: 220,
     borderRadius: 10,
   },
   loginBtnText: {
-    color: white_color,
+    color: COLORS.white,
     textAlign: 'center',
     justifyContent: 'center',
     fontSize: 22,
   },
   createCcount: {
-    color: primary_color,
+    color: COLORS.BlueViolet,
     marginBottom: 100,
     marginTop: 10,
     marginLeft: 46,
