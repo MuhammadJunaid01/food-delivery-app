@@ -13,6 +13,7 @@ export const COLORS = {
   yellow: '#F4D03F',
   BlueViolet: '#5956E9',
   dark: '#181A20',
+  Vulcan: '#35383F',
 };
 
 export const SIZES = {

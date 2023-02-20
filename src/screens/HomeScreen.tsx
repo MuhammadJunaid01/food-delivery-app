@@ -6,26 +6,29 @@ import React from 'react';
 import {COLORS} from '../../libs/theme';
 import AppBar from '../../ui/appBar';
 import SpecialOffer from '../../ui/specialOffer';
-import {specialOfferData} from '../../libs/data';
+import {categories, specialOfferData} from '../../libs/data';
+import Categories from '../../ui/categories';
 
 const HomeScreen = () => {
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <AppBar />
-        <SpecialOffer
-          title="Special Offers"
-          btnLabel="See All"
-          data={specialOfferData}
-        />
-      </View>
-    </ScrollView>
+    <View style={{backgroundColor: COLORS.dark}}>
+      <ScrollView>
+        <View style={styles.container}>
+          <AppBar />
+          <SpecialOffer
+            title="Special Offers"
+            btnLabel="See All"
+            data={specialOfferData}
+          />
+        </View>
+      </ScrollView>
+      <Categories data={categories} />
+    </View>
   );
 };
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: COLORS.dark,
   },
   text: {
     fontSize: 40,

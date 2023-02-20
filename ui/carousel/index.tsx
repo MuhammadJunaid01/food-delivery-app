@@ -2,47 +2,27 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
-import React, {useRef, useState} from 'react';
-import {
-  Dimensions,
-  Image,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from 'react-native';
-import Carousel, {Pagination} from 'react-native-reanimated-carousel';
+import React, {useState} from 'react';
+import {Dimensions, StyleSheet, View} from 'react-native';
+import Carousel from 'react-native-reanimated-carousel';
 import {SpecialOfferProps} from '../../libs/interfaces';
+import {COLORS, SIZES} from '../../libs/theme';
+import RenderItem from './RenderItem';
 
 interface SlideCaroselProps {
   data: SpecialOfferProps['data'];
 }
-const renderItem = ({
-  item,
-}: {
-  item: {
-    id: number;
-    discount: number;
-    discountTitle: string;
-    discountInfo: string;
-    thumbnail: string;
-  };
-}) => (
-  <View>
-    <Text style={{textAlign: 'center', fontSize: 30}}>{item.id}</Text>
-    <Image style={{height: 70, width: 70}} source={item.thumbnail} />
-  </View>
-);
+
 export default function SlideCarosel({data}: SlideCaroselProps) {
   const width = Dimensions.get('window').width;
   const [activeSlide, setActiveSlide] = useState<number>(0);
 
   const handleSlideChange = (index: number) => {
     setActiveSlide(index);
-    console.log('hello', index);
+    console.log('active', activeSlide);
   };
   return (
-    <View style={{flex: 1}}>
+    <View style={styles.container}>
       <Carousel
         onSnapToItem={index => handleSlideChange(index)}
         loop
@@ -50,9 +30,9 @@ export default function SlideCarosel({data}: SlideCaroselProps) {
         height={width / 2}
         autoPlay={true}
         data={data}
-        scrollAnimationDuration={9000}
-        // autoPlayInterval={9000}
-        renderItem={renderItem}
+        scrollAnimationDuration={12000}
+        autoPlayInterval={12000}
+        renderItem={RenderItem}
       />
       <View style={styles.indicatorContainer}>
         {data.map((_, index) => (
@@ -71,28 +51,34 @@ export default function SlideCarosel({data}: SlideCaroselProps) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 15,
+    backgroundColor: COLORS.Vulcan,
+    borderRadius: 10,
+    overflow: 'hidden',
+    paddingHorizontal: 10,
+    paddingVertical: 10,
   },
   slide: {
-    width: 200,
-    height: 200,
+    width: SIZES.width,
+    height: 250,
     resizeMode: 'contain',
   },
   indicatorContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    marginTop: 8,
+    marginTop: -22,
   },
   indicator: {
     width: 9,
     height: 9,
     borderRadius: 4,
-    backgroundColor: 'gray',
+    backgroundColor: COLORS.grey,
     marginHorizontal: 4,
   },
   indicatorActive: {
-    backgroundColor: 'red',
+    backgroundColor: COLORS.BlueViolet,
+    width: 25,
   },
+  renderItem: {},
 });

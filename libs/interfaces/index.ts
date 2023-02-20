@@ -25,3 +25,6 @@ export interface SpecialOfferProps {
     thumbnail: string;
   }[];
 }
+export interface CategoriesProps {
+  data: {id: number; label: string; icon: string}[];
+}

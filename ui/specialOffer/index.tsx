@@ -15,7 +15,7 @@ export default function SpecialOffer({
       <View style={styles.titileBox}>
         <Text style={styles.title}>{title}</Text>
         <TouchableOpacity>
-          <Text>{btnLabel}</Text>
+          <Text style={styles.title}>{btnLabel}</Text>
         </TouchableOpacity>
       </View>
       <SlideCarosel data={data} />
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   title: {
     color: COLORS.white,
-    fontSize: SIZES.h1,
+    fontSize: SIZES.h5,
     fontFamily: 'Raleway-Bold',
   },
 });
