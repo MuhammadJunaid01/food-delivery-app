@@ -1,5 +1,6 @@
-/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable prettier/prettier */
+/* eslint-disable react/no-unstable-nested-components */
+
 import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import BottomTabNavigator from './TabNavigator';
@@ -11,7 +12,7 @@ const Drawer = createDrawerNavigator();
 export default function DrawerNavigator() {
   return (
     <Drawer.Navigator
-      drawerContent={props => <DrawerContent {...props} />}
+      drawerContent={props => <DrawerContent children={undefined} {...props} />}
       screenOptions={{
         headerStyle: {backgroundColor: primary_color},
         headerBackgroundContainerStyle: {},

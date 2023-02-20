@@ -4,8 +4,6 @@ import {View, Image, StyleSheet} from 'react-native';
 import React from 'react';
 import {Text} from 'react-native';
 
-import {primary_color} from '../../libs/colors';
-
 import AppIntroSlider from 'react-native-app-intro-slider';
 import {COLORS, SIZES} from '../../libs/theme';
 import {useNavigation} from '@react-navigation/native';

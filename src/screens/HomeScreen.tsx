@@ -1,22 +1,30 @@
 /* eslint-disable prettier/prettier */
 
 /* eslint-disable prettier/prettier */
-import {View, Text, StyleSheet} from 'react-native';
+import {View, StyleSheet, ScrollView} from 'react-native';
 import React from 'react';
-import {COLORS, SIZES} from '../../libs/theme';
+import {COLORS} from '../../libs/theme';
 import AppBar from '../../ui/appBar';
+import SpecialOffer from '../../ui/specialOffer';
+import {specialOfferData} from '../../libs/data';
 
 const HomeScreen = () => {
   return (
-    <View style={styles.container}>
-      <AppBar />
-      <Text style={styles.text}>Hello</Text>
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <AppBar />
+        <SpecialOffer
+          title="Special Offers"
+          btnLabel="See All"
+          data={specialOfferData}
+        />
+      </View>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
   container: {
-    height: SIZES.height,
+    flex: 1,
     backgroundColor: COLORS.dark,
   },
   text: {

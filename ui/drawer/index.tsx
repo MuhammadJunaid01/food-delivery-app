@@ -9,7 +9,7 @@ import {
   Text,
   View,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import Icons from 'react-native-vector-icons/AntDesign';
 import IconsMa from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -30,10 +30,9 @@ export default function DrawerContent(
       children: React.ReactNode;
     } & React.RefAttributes<ScrollView>,
 ) {
-  // function signOut() {
-  //   throw new Error('Function not implemented.');
-  // }
+  const [isSwitchOn, setIsSwitchOn] = useState(false);
 
+  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
   return (
     <View style={{flex: 1, backgroundColor: COLORS.lightGrey}}>
       <DrawerContentScrollView {...props}>
@@ -86,12 +85,16 @@ export default function DrawerContent(
               onPress={() => {}}
             />
           </Drawer.Section>
-          <Drawer.Section title="Preferences">
+          <Drawer.Section>
             <TouchableRipple onPress={() => {}}>
               <View style={styles.preference}>
                 <Text style={{color: COLORS.dark}}>Dark Theme</Text>
-                <View pointerEvents="none">
-                  <Switch />
+                <View>
+                  <Switch
+                    value={isSwitchOn}
+                    onValueChange={onToggleSwitch}
+                    color={COLORS.dark}
+                  />
                 </View>
               </View>
             </TouchableRipple>
@@ -100,9 +103,7 @@ export default function DrawerContent(
       </DrawerContentScrollView>
       <Drawer.Section style={styles.bottomDrawerSection}>
         <DrawerItem
-          // icon={({color, size}) => (
-          //   <Icon name="exit-to-app" color={color} size={size} />
-          // )}
+          icon={() => <Icons name="logout" size={25} color={COLORS.dark} />}
           label="Sign Out"
           onPress={() => {}}
         />

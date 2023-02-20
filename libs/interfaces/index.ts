@@ -14,3 +14,14 @@ export interface TouchableBtnProps {
   padding?: number;
   margin?: number;
 }
+export interface SpecialOfferProps {
+  title: string;
+  btnLabel: string;
+  data: {
+    id: number;
+    discount: number;
+    discountTitle: string;
+    discountInfo: string;
+    thumbnail: string;
+  }[];
+}

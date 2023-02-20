@@ -3,7 +3,7 @@
 import {useState} from 'react';
 
 export default function useAuth() {
-  const [isLogedIn, setIsLogedIn] = useState<boolean>(true);
+  const [isLogedIn, setIsLogedIn] = useState<boolean>(false);
   const handleLogin = () => {
     setIsLogedIn(!isLogedIn);
   };
