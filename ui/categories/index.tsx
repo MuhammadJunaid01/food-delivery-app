@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
@@ -7,13 +8,18 @@ import {FlatList} from 'react-native';
 import {COLORS, SIZES} from '../../libs/theme';
 
 const Categories = ({data}: CategoriesProps) => {
+  const handlePress = (id: number) => {
+    console.log(id);
+  };
   return (
     <View style={styles.container}>
       <FlatList
         data={data}
         renderItem={({item}) => {
           return (
-            <TouchableOpacity style={{alignItems: 'center'}}>
+            <TouchableOpacity
+              onPress={() => handlePress(item.id)}
+              style={{alignItems: 'center'}}>
               <View style={styles.categories}>
                 <Image style={styles.icon} source={item.icon} />
               </View>
@@ -35,7 +41,8 @@ const styles = StyleSheet.create({
   container: {
     width: SIZES.width,
     overflow: 'hidden',
-    paddingVertical: 20,
+    // paddingVertical: 20,
+    paddingBottom: 15,
   },
   categories: {
     justifyContent: 'center',

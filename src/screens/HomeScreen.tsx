@@ -1,17 +1,23 @@
 /* eslint-disable prettier/prettier */
 
 /* eslint-disable prettier/prettier */
-import {View, StyleSheet, ScrollView} from 'react-native';
+import {View, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import React from 'react';
 import {COLORS} from '../../libs/theme';
 import AppBar from '../../ui/appBar';
 import SpecialOffer from '../../ui/specialOffer';
-import {categories, specialOfferData} from '../../libs/data';
+import {categories, mostPopularData, specialOfferData} from '../../libs/data';
 import Categories from '../../ui/categories';
+import MostPopular from '../../ui/mosPopular';
+import Products from '../../ui/products';
 
 const HomeScreen = () => {
   return (
-    <View style={{backgroundColor: COLORS.dark}}>
+    <ScrollView
+      nestedScrollEnabled={true}
+      scrollEnabled
+      style={{backgroundColor: COLORS.dark, flex: 1}}>
+      <SafeAreaView />
       <ScrollView>
         <View style={styles.container}>
           <AppBar />
@@ -23,7 +29,13 @@ const HomeScreen = () => {
         </View>
       </ScrollView>
       <Categories data={categories} />
-    </View>
+      <MostPopular
+        data={mostPopularData}
+        title="Most Popular"
+        btnLabel="See All"
+      />
+      <Products />
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
@@ -34,11 +46,6 @@ const styles = StyleSheet.create({
     fontSize: 40,
     fontWeight: '600',
     color: COLORS.white,
-  },
-  openDrawr: {
-    position: 'absolute',
-    top: 30,
-    left: 0,
   },
 });
 export default HomeScreen;

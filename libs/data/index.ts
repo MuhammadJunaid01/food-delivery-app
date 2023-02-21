@@ -84,3 +84,13 @@ export const categories: categorieDataTypes['data'] = [
     label: 'Toys',
   },
 ];
+export const mostPopularData = [
+  'Clothes',
+  'Shoes',
+  'Bags',
+  'Electronic',
+  'Watch',
+  'Jewellery',
+  'Kitchen',
+  'Toys',
+];

@@ -28,3 +28,19 @@ export interface SpecialOfferProps {
 export interface CategoriesProps {
   data: {id: number; label: string; icon: string}[];
 }
+export interface MostPopularProps {
+  title: string;
+  btnLabel: string;
+  data: string[];
+}
+export interface ProductsType {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
