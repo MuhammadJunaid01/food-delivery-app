@@ -24,14 +24,12 @@ export default function SpecialOffer({
 }
 
 const styles = StyleSheet.create({
-  container: {
-    paddingVertical: 30,
-    paddingHorizontal: 10,
-  },
+  container: {},
   titileBox: {
-    flex: 1,
     justifyContent: 'space-between',
     flexDirection: 'row',
+    paddingVertical: 20,
+    paddingHorizontal: 10,
   },
   title: {
     color: COLORS.white,

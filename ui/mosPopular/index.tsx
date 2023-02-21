@@ -28,6 +28,9 @@ export default function MostPopular({data, title, btnLabel}: MostPopularProps) {
         data={data}
         keyExtractor={item => item}
         horizontal={true}
+        // ListHeaderComponent={()=>{
+        //   return
+        // }}
         renderItem={({item, index}) => {
           return (
             <TouchableOpacity

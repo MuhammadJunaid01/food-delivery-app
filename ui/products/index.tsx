@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable @typescript-eslint/no-shadow */
 /* eslint-disable prettier/prettier */
 import {
@@ -58,6 +59,11 @@ const Products = () => {
         data={products}
         renderItem={renderItem}
         keyExtractor={item => item.id.toString()}
+        ListHeaderComponent={() => (
+          <View>
+            <Text>This is the header</Text>
+          </View>
+        )}
         // ListFooterComponent={renderLoader}
         // onEndReached={loadMoreItem}
         // onEndReachedThreshold={0}

@@ -49,7 +49,6 @@ export default function Appbar() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'space-between',
     flexDirection: 'row',
     marginTop: 20,
@@ -62,7 +61,6 @@ const styles = StyleSheet.create({
     marginRight: 20,
   },
   info: {
-    flex: 1,
     flexDirection: 'column',
     marginTop: 9,
   },

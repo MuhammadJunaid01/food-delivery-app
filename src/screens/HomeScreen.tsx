@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 
 /* eslint-disable prettier/prettier */
@@ -13,21 +14,14 @@ import Products from '../../ui/products';
 
 const HomeScreen = () => {
   return (
-    <ScrollView
-      nestedScrollEnabled={true}
-      scrollEnabled
-      style={{backgroundColor: COLORS.dark, flex: 1}}>
-      <SafeAreaView />
-      <ScrollView>
-        <View style={styles.container}>
-          <AppBar />
-          <SpecialOffer
-            title="Special Offers"
-            btnLabel="See All"
-            data={specialOfferData}
-          />
-        </View>
-      </ScrollView>
+    <View style={[styles.container, {backgroundColor: COLORS.dark, flex: 1}]}>
+      <AppBar />
+      <SpecialOffer
+        title="Special Offers"
+        btnLabel="See All"
+        data={specialOfferData}
+      />
+
       <Categories data={categories} />
       <MostPopular
         data={mostPopularData}
@@ -35,7 +29,7 @@ const HomeScreen = () => {
         btnLabel="See All"
       />
       <Products />
-    </ScrollView>
+    </View>
   );
 };
 const styles = StyleSheet.create({

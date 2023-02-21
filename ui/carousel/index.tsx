@@ -50,8 +50,6 @@ export default function SlideCarosel({data}: SlideCaroselProps) {
 }
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    marginTop: 15,
     backgroundColor: COLORS.Vulcan,
     borderRadius: 10,
     overflow: 'hidden',
