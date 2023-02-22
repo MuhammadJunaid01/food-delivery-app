@@ -1,7 +1,15 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
-import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  SafeAreaView,
+  ScrollView,
+} from 'react-native';
 import React from 'react';
 import {CategoriesProps} from '../../libs/interfaces';
 import {FlatList} from 'react-native';
@@ -13,24 +21,24 @@ const Categories = ({data}: CategoriesProps) => {
   };
   return (
     <View style={styles.container}>
-      <FlatList
-        data={data}
-        renderItem={({item}) => {
-          return (
-            <TouchableOpacity
-              onPress={() => handlePress(item.id)}
-              style={{alignItems: 'center'}}>
-              <View style={styles.categories}>
-                <Image style={styles.icon} source={item.icon} />
-              </View>
-              <Text style={styles.title}>{item.label}</Text>
-            </TouchableOpacity>
-          );
-        }}
-        keyExtractor={item => item.id.toString()}
-        horizontal={false}
-        numColumns={4}
-      />
+      <Text style={styles.header}>Categories</Text>
+      <SafeAreaView>
+        <ScrollView horizontal={true}>
+          {data?.map((item, index) => {
+            return (
+              <TouchableOpacity
+                key={index}
+                onPress={() => handlePress(item.id)}
+                style={styles.itemBox}>
+                <View style={styles.categories}>
+                  <Image style={styles.icon} source={item.icon} />
+                </View>
+                <Text style={styles.title}>{item.label}</Text>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      </SafeAreaView>
     </View>
   );
 };
@@ -41,15 +49,23 @@ const styles = StyleSheet.create({
   container: {
     width: SIZES.width,
     overflow: 'hidden',
-    // paddingVertical: 20,
     paddingBottom: 15,
+    marginTop: 15,
+  },
+  header: {
+    fontFamily: 'Raleway-Bold',
+    fontSize: SIZES.h4,
   },
   categories: {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: COLORS.white,
-    margin: 20,
+    marginHorizontal: 17,
+    marginVertical: 10,
     borderRadius: 50,
+  },
+  itemBox: {
+    alignItems: 'center',
   },
   icon: {
     height: 45,

@@ -1,4 +1,15 @@
 {
   "extends": "@tsconfig/react-native/tsconfig.json",
-  "assets": ["./assets/fonts/"]
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "target": "es2015",
+    "jsx": "react",
+    "noEmit": true,
+    "moduleResolution": "node",
+    "importHelpers": true
+  },
+  "exclude": ["node_modules"]
 }

@@ -4,32 +4,35 @@
 /* eslint-disable prettier/prettier */
 import {View, StyleSheet, ScrollView, SafeAreaView} from 'react-native';
 import React from 'react';
-import {COLORS} from '../../libs/theme';
-import AppBar from '../../ui/appBar';
-import SpecialOffer from '../../ui/specialOffer';
-import {categories, mostPopularData, specialOfferData} from '../../libs/data';
-import Categories from '../../ui/categories';
-import MostPopular from '../../ui/mosPopular';
-import Products from '../../ui/products';
+
+import Products from '@/ui/products';
+import AppBar from '@/ui/appBar';
+import SpecialOffer from '@/ui/specialOffer';
+import {categories, mostPopularData, specialOfferData} from '@/libs/data';
+import Categories from '@/ui/categories';
+import MostPopular from '@/ui/mosPopular';
+import {COLORS} from '@/libs/theme';
 
 const HomeScreen = () => {
   return (
-    <View style={[styles.container, {backgroundColor: COLORS.dark, flex: 1}]}>
-      <AppBar />
-      <SpecialOffer
-        title="Special Offers"
-        btnLabel="See All"
-        data={specialOfferData}
-      />
+    <ScrollView style={{backgroundColor: COLORS.dark, flex: 1}}>
+      <View style={[styles.container]}>
+        <AppBar />
+        <SpecialOffer
+          title="Special Offers"
+          btnLabel="See All"
+          data={specialOfferData}
+        />
 
-      <Categories data={categories} />
-      <MostPopular
-        data={mostPopularData}
-        title="Most Popular"
-        btnLabel="See All"
-      />
-      <Products />
-    </View>
+        <Categories data={categories} />
+        <MostPopular
+          data={mostPopularData}
+          title="Most Popular"
+          btnLabel="See All"
+        />
+        <Products />
+      </View>
+    </ScrollView>
   );
 };
 const styles = StyleSheet.create({

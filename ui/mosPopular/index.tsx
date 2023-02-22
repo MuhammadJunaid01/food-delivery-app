@@ -1,7 +1,7 @@
 /* eslint-disable prettier/prettier */
 import {
-  FlatList,
   SafeAreaView,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -24,16 +24,11 @@ export default function MostPopular({data, title, btnLabel}: MostPopularProps) {
           <Text style={styles.title}>{btnLabel}</Text>
         </TouchableOpacity>
       </View>
-      <FlatList
-        data={data}
-        keyExtractor={item => item}
-        horizontal={true}
-        // ListHeaderComponent={()=>{
-        //   return
-        // }}
-        renderItem={({item, index}) => {
+      <ScrollView horizontal={true}>
+        {data?.map((item, index) => {
           return (
             <TouchableOpacity
+              key={index}
               onPress={() => handlePress(index)}
               style={[
                 styles.itemContainer,
@@ -42,17 +37,14 @@ export default function MostPopular({data, title, btnLabel}: MostPopularProps) {
               <Text style={styles.item}>{item}</Text>
             </TouchableOpacity>
           );
-        }}
-      />
+        })}
+      </ScrollView>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    marginTop: 10,
-    paddingBottom: 10,
-  },
+  container: {},
   header: {
     flexDirection: 'row',
     justifyContent: 'space-between',
