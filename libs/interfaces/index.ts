@@ -1,4 +1,5 @@
-/* eslint-disable prettier/prettier */
+import {RouteProp} from '@react-navigation/native';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 import {ReactNode} from 'react';
 
 export interface MainLayouteProps {
@@ -43,4 +44,15 @@ export interface ProductsType {
     rate: number;
     count: number;
   };
+}
+
+//NAVIGATION PROPS TYPE
+export interface RootStackParamList {
+  [key: string]: undefined | {[key: string]: any};
+  Details: {itemId: number};
+}
+
+export interface DetailsScreenProps {
+  navigation: NativeStackNavigationProp<RootStackParamList, 'Details'>;
+  route: RouteProp<RootStackParamList, 'Details'>;
 }

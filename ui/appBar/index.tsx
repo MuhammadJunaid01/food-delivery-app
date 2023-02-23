@@ -1,15 +1,16 @@
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable prettier/prettier */
-import {StyleSheet, Text, TextInput, View} from 'react-native';
-import React, {useState} from 'react';
-import Icons from 'react-native-vector-icons/AntDesign';
-import IconsE from 'react-native-vector-icons/Entypo';
-import {Image} from 'react-native';
-import {COLORS, SIZES} from '../../libs/theme';
+import {gray_100} from '@/libs/colors';
+import {COLORS, SIZES} from '@/libs/theme';
 import {useNavigation} from '@react-navigation/native';
-import {TouchableOpacity} from 'react-native';
+import React, {useState} from 'react';
+import {
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
+import Icons from 'react-native-vector-icons/AntDesign';
 import IconsFa from 'react-native-vector-icons/FontAwesome';
-import {gray_100} from '../../libs/colors';
 
 export default function Appbar() {
   const navigation = useNavigation();

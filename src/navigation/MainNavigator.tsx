@@ -1,12 +1,13 @@
-/* eslint-disable prettier/prettier */
-import React, {useState} from 'react';
+import {RootStackParamList} from '@/libs/interfaces';
 import {createStackNavigator} from '@react-navigation/stack';
-import ContactScreen from '../screens/ContactScreen';
-import LoginScreen from '../screens/LoginScreen';
-import HomeScreen from '../screens/HomeScreen';
-import GetStartedScreen from '../screens/GetStartedScreen';
+import React from 'react';
 import useAuth from '../../libs/hooks/useAuth';
-const Stack = createStackNavigator();
+import ContactScreen from '../screens/ContactScreen';
+import DetailsScreen from '../screens/DetailsScreen';
+import GetStartedScreen from '../screens/GetStartedScreen';
+import HomeScreen from '../screens/HomeScreen';
+import LoginScreen from '../screens/LoginScreen';
+const Stack = createStackNavigator<RootStackParamList>();
 const screenOptionStyle = {
   headerStyle: {
     backgroundColor: '#9AC4F8',
@@ -20,8 +21,7 @@ export default function MainNavigator() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        headerTintColor: 'white',
-        headerBackTitle: 'Back',
+        animationEnabled: false,
       }}>
       <Stack.Screen
         name="Home"
@@ -30,6 +30,13 @@ export default function MainNavigator() {
       <Stack.Screen
         name="Contact"
         component={ContactScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Details"
+        component={DetailsScreen}
         options={{
           headerShown: false,
         }}

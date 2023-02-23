@@ -1,33 +1,31 @@
-/* eslint-disable space-infix-ops */
-/* eslint-disable prettier/prettier */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable react/no-unstable-nested-components */
-
-/* eslint-disable prettier/prettier */
-import {ActivityIndicator, StyleSheet, Text, View} from 'react-native';
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import api from '@/libs/api';
 import {ProductsType} from '@/libs/interfaces';
-import Product from '@/ui/product';
 import {COLORS, SIZES} from '@/libs/theme';
+import Product from '@/ui/product';
+import React, {useEffect, useState} from 'react';
+import {ActivityIndicator, StyleSheet, View} from 'react-native';
 
 const Products = () => {
   const [products, setProducts] = useState<ProductsType[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  let count = products?.length / 5;
-  const getProducts = () => {
-    setIsLoading(true);
-    const url: string = 'https://fakestoreapi.com/products';
-    axios.get(url).then(res => {
+  const getProducts = async () => {
+    try {
+      setIsLoading(true);
+      const res = await api.get('/products');
+      if (!res.data) {
+        throw new Error('something went wrong!');
+      }
       setProducts(res.data);
       setIsLoading(false);
-    });
+    } catch (error) {
+      setIsLoading(false);
+      console.log(error);
+    }
   };
 
   useEffect(() => {
     getProducts();
   }, []);
-
   if (isLoading) {
     return (
       <View style={{alignItems: 'center'}}>
@@ -47,18 +45,6 @@ const Products = () => {
           );
         })}
       </View>
-      <View style={styles.pagination}>
-        {/* {products?.map((_, index) => {
-          return (
-            <View key={index}>
-              <Text>{Math.floor(index / 5)}</Text>
-            </View>
-          );
-        })} */}
-        {new Array(products?.length / 4).fill(0).map((item, index) => (
-          <Text key={index}>{index}</Text>
-        ))}
-      </View>
     </View>
   );
 };
@@ -75,7 +61,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
   },
   item: {
-    height: 150,
+    height: 260,
     backgroundColor: COLORS.Vulcan,
     flexBasis: '48%',
     justifyContent: 'center',
@@ -84,9 +70,5 @@ const styles = StyleSheet.create({
     borderRadius: 11,
     paddingHorizontal: 15,
     overflow: 'hidden',
-  },
-  pagination: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
   },
 });

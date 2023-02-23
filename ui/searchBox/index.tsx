@@ -1,9 +1,8 @@
-/* eslint-disable prettier/prettier */
-import {StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
 import {useNavigation} from '@react-navigation/native';
-import Icon from 'react-native-vector-icons/AntDesign';
+import React, {useState} from 'react';
+import {StyleSheet, Text, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
+import Icon from 'react-native-vector-icons/AntDesign';
 import {gray_100, white_color} from '../../libs/colors';
 
 export default function SearchBox() {

@@ -1,12 +1,8 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable prettier/prettier */
+import {SpecialOfferProps} from '@/libs/interfaces';
+import {COLORS, SIZES} from '@/libs/theme';
 import React, {useState} from 'react';
 import {Dimensions, StyleSheet, View} from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
-import {SpecialOfferProps} from '../../libs/interfaces';
-import {COLORS, SIZES} from '../../libs/theme';
 import RenderItem from './RenderItem';
 
 interface SlideCaroselProps {

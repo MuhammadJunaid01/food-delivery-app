@@ -1,12 +1,9 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/no-unstable-nested-components */
-
-import React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import BottomTabNavigator from './TabNavigator';
-import {ContactStackNavigator} from './MainNavigator';
+import React from 'react';
 import {primary_color} from '../../libs/colors';
 import DrawerContent from '../../ui/drawer';
+import {ContactStackNavigator} from './MainNavigator';
+import BottomTabNavigator from './TabNavigator';
 const Drawer = createDrawerNavigator();
 
 export default function DrawerNavigator() {

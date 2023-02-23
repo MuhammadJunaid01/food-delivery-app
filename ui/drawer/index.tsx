@@ -1,7 +1,5 @@
-/* eslint-disable react/no-unstable-nested-components */
-/* eslint-disable prettier/prettier */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable prettier/prettier */
+import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
+import React, {useState} from 'react';
 import {
   ScrollView,
   ScrollViewProps,
@@ -9,12 +7,6 @@ import {
   Text,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
-import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
-import Icons from 'react-native-vector-icons/AntDesign';
-import IconsMa from 'react-native-vector-icons/MaterialCommunityIcons';
-import IconsEn from 'react-native-vector-icons/MaterialCommunityIcons';
-import IconsFa from 'react-native-vector-icons/FontAwesome';
 import {
   Avatar,
   Caption,
@@ -23,6 +15,12 @@ import {
   Title,
   TouchableRipple,
 } from 'react-native-paper';
+import Icons from 'react-native-vector-icons/AntDesign';
+import IconsFa from 'react-native-vector-icons/FontAwesome';
+import {
+  default as IconsEn,
+  default as IconsMa,
+} from 'react-native-vector-icons/MaterialCommunityIcons';
 import {COLORS} from '../../libs/theme';
 export default function DrawerContent(
   props: JSX.IntrinsicAttributes &

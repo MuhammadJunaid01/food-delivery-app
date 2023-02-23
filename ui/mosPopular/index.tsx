@@ -1,4 +1,4 @@
-/* eslint-disable prettier/prettier */
+import React, {useState} from 'react';
 import {
   SafeAreaView,
   ScrollView,
@@ -7,7 +7,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import React, {useState} from 'react';
 import {MostPopularProps} from '../../libs/interfaces';
 import {COLORS, SIZES} from '../../libs/theme';
 

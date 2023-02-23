@@ -1,16 +1,13 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react-native/no-inline-styles */
-/* eslint-disable prettier/prettier */
+import React from 'react';
 import {
-  StyleSheet,
-  Text,
-  View,
   Image,
-  TouchableOpacity,
   SafeAreaView,
   ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from 'react-native';
-import React from 'react';
 import {CategoriesProps} from '../../libs/interfaces';
 import {COLORS, SIZES} from '../../libs/theme';
 

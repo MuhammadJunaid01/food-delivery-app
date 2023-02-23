@@ -1,16 +1,16 @@
-/* eslint-disable prettier/prettier */
+import {black_color, gray_100, white_color} from '@/libs/colors';
+import {COLORS} from '@/libs/theme';
+import React, {useState} from 'react';
 import {
   StyleSheet,
   Text,
+  TextInput,
   TouchableOpacity,
   View,
-  TextInput,
 } from 'react-native';
-import React, {useState} from 'react';
-import {black_color, gray_100, white_color} from '../../libs/colors';
-import Icon from 'react-native-vector-icons/Fontisto';
 import Icons from 'react-native-vector-icons/Entypo';
-import {COLORS} from '../../libs/theme';
+import Icon from 'react-native-vector-icons/Fontisto';
+
 export default function LoginForm() {
   const [email, setEmail] = useState('rosina@company.com');
   const [password, setPassword] = useState('');
