@@ -5,7 +5,7 @@ import React from 'react';
 import {Text} from 'react-native';
 
 import AppIntroSlider from 'react-native-app-intro-slider';
-import {COLORS, SIZES} from '../../libs/theme';
+import {COLORS, SIZES} from '@/libs/theme';
 import {useNavigation} from '@react-navigation/native';
 const slides = [
   {

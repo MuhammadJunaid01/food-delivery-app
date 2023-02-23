@@ -12,7 +12,6 @@ import {
 } from 'react-native';
 import React from 'react';
 import {CategoriesProps} from '../../libs/interfaces';
-import {FlatList} from 'react-native';
 import {COLORS, SIZES} from '../../libs/theme';
 
 const Categories = ({data}: CategoriesProps) => {
@@ -55,6 +54,7 @@ const styles = StyleSheet.create({
   header: {
     fontFamily: 'Raleway-Bold',
     fontSize: SIZES.h4,
+    marginLeft: 13,
   },
   categories: {
     justifyContent: 'center',
