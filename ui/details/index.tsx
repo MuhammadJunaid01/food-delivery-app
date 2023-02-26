@@ -6,12 +6,14 @@ import {StyleSheet, Text, View} from 'react-native';
 const Details = ({id}: {id: number}) => {
   const [product, setProduct] = useState<ProductsType>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const getProducts = () => {
-    setIsLoading(true);
-    api.get(`/products/${id}`).then(res => {
+  const getProducts = async () => {
+    try {
+      setIsLoading(true);
+      const res = await api.get(`/products/${id}`);
       setProduct(res.data);
-      setIsLoading(false);
-    });
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <View>

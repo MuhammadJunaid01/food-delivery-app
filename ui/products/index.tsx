@@ -54,7 +54,6 @@ export default Products;
 const styles = StyleSheet.create({
   container: {
     width: SIZES.width,
-    // marginLeft: 13,
     marginTop: 18,
     flexDirection: 'row',
     flexWrap: 'wrap',

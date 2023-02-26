@@ -1,16 +1,19 @@
 import {initializeApp} from 'firebase/app';
-
+import {getAuth} from 'firebase/auth';
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+// import {getAuth} from 'firebase/auth'
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: 'AIzaSyCgV_Mwr7X9plYqhERsGEqxmDNp1vqLwLg',
-  authDomain: 'jmart-app-44a21.firebaseapp.com',
-  projectId: 'jmart-app-44a21',
-  storageBucket: 'jmart-app-44a21.appspot.com',
-  messagingSenderId: '455227918808',
-  appId: '1:455227918808:web:671333975d1b106c4a8aad',
-  measurementId: 'G-TS4QTTPK9C',
+  apiKey: 'AIzaSyDZ1rBvhXmCyIBKyV6saBGnF-bzU4USv4A',
+  authDomain: 'react-native-firebase-ap-373ee.firebaseapp.com',
+  projectId: 'react-native-firebase-ap-373ee',
+  storageBucket: 'react-native-firebase-ap-373ee.appspot.com',
+  messagingSenderId: '174844417486',
+  appId: '1:174844417486:web:4f11ba3b0cdc8e89f5079f',
 };
 
 // Initialize Firebase
-if (!firebase) {
-}
 const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+export {app, auth};

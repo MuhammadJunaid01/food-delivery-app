@@ -1,12 +1,12 @@
 /* eslint-disable react-native/no-inline-styles */
-/* eslint-disable prettier/prettier */
-import {View, Image, StyleSheet} from 'react-native';
-import React from 'react';
-import {Text} from 'react-native';
 
-import AppIntroSlider from 'react-native-app-intro-slider';
+import React from 'react';
+import {Image, Text, View} from 'react-native';
+
+import {RootStackParamList} from '@/libs/interfaces';
 import {COLORS, SIZES} from '@/libs/theme';
 import {useNavigation} from '@react-navigation/native';
+import AppIntroSlider from 'react-native-app-intro-slider';
 const slides = [
   {
     id: 1,
@@ -45,7 +45,7 @@ const slides = [
   },
 ];
 const GetStartedScreen = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<RootStackParamList['Login']>();
   const buttonLabel = (label: string) => {
     return (
       <View

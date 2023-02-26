@@ -15,3 +15,11 @@ ui kit v2 https://www.figma.com/file/65U3ukVkWyTUR1MnfV5072/Evira---E-Commerce-%
 ui kit v3 https://www.figma.com/file/gmVhyZDyA48VE9JTd7ICvq/Ecommerce-app-ui-kit-(Community)?node-id=0%3A1&t=r494uR8bn4pmHjDQ-0
 
 onboarding resources https://www.npmjs.com/package/react-native-onboarding-swiper
+
+ SHA1: 5E:8F:16:06:2E:A3:CD:2C:4A:0D:54:78:76:BA:A6:F3:8C:AB:F6:25
+
+   SHA256: FA:C6:17:45:DC:09:03:78:6F:B9:ED:E6:2A:96:2B:39:9F:73:48:F0:BB:6F:89:9B:83:32:66:75:91:03:3B:9C
+
+
+
+   javascerror https://stackoverflow.com/questions/74346206/task-appcompiledebugjavawithjavac-failed

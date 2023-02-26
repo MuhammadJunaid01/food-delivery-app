@@ -1,7 +1,6 @@
-/* eslint-disable prettier/prettier */
-import {StyleSheet, Text, View} from 'react-native';
+import {primary_color} from '@/libs/colors';
 import React from 'react';
-import {primary_color} from '../../libs/colors';
+import {StyleSheet, Text, View} from 'react-native';
 
 export default function ContactScreen() {
   return (

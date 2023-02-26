@@ -1,6 +1,5 @@
-/* eslint-disable prettier/prettier */
-import {View, Text} from 'react-native';
 import React, {ReactNode} from 'react';
+import {View} from 'react-native';
 
 export default function Providers({children}: ReactNode) {
   return <View>{children}</View>;

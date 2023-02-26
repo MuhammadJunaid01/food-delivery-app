@@ -48,7 +48,7 @@ export interface ProductsType {
 
 //NAVIGATION PROPS TYPE
 export interface RootStackParamList {
-  [key: string]: undefined | {[key: string]: any};
+  [key: string]: {[key: string]: any};
   Details: {itemId: number};
 }
 
