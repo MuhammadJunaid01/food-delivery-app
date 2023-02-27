@@ -2,11 +2,11 @@ import useAuth from '@/libs/hooks/useAuth';
 import {RootStackParamList} from '@/libs/interfaces';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
+import LoginScreen from '../screens/AuthScreen';
 import ContactScreen from '../screens/ContactScreen';
 import DetailsScreen from '../screens/DetailsScreen';
 import GetStartedScreen from '../screens/GetStartedScreen';
 import HomeScreen from '../screens/HomeScreen';
-import LoginScreen from '../screens/LoginScreen';
 const Stack = createStackNavigator<RootStackParamList>();
 const screenOptionStyle = {
   headerStyle: {

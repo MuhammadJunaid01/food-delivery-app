@@ -59,7 +59,7 @@ export default function LoginForm() {
         <TouchableOpacity style={styles.loginBtn}>
           <Text style={styles.loginBtnText}>Login</Text>
         </TouchableOpacity>
-        <Text style={styles.createCcount}>Create account</Text>
+        <Text style={styles.createCcount}>Already have an account?</Text>
       </View>
     </View>
   );
@@ -132,10 +132,11 @@ const styles = StyleSheet.create({
     fontSize: 22,
   },
   createCcount: {
-    color: COLORS.BlueViolet,
+    color: COLORS.grey,
     marginBottom: 100,
-    marginTop: 10,
-    marginLeft: 46,
-    fontSize: 17,
+    marginTop: 6,
+    marginLeft: 13,
+    fontSize: 14,
+    fontFamily: 'Raleway-ExtraBold',
   },
 });

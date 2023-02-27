@@ -27,6 +27,7 @@
     "react-native-app-intro-slider": "^4.0.4",
     "react-native-gesture-handler": "^2.9.0",
     "react-native-paper": "^5.1.4",
+    "react-native-phone-number-input": "^2.1.0",
     "react-native-reanimated": "^2.14.4",
     "react-native-reanimated-carousel": "^3.3.0",
     "react-native-safe-area-context": "^4.5.0",
