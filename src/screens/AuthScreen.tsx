@@ -1,9 +1,9 @@
+import {white_color} from '@/libs/colors';
+import {COLORS} from '@/libs/theme';
 import LoginForm from '@/ui/login';
 import PhoneAuthenTication from '@/ui/phoneAuthentication';
 import React, {useState} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {white_color} from '../../libs/colors';
-import {COLORS} from '../../libs/theme';
 
 export default function AuthScreen({}) {
   const [isLoging, setIsLoging] = useState<boolean>(false);
@@ -12,13 +12,6 @@ export default function AuthScreen({}) {
     <View style={styles.container}>
       <Text style={styles.headingText}>Welcome {isLoging && 'back'} </Text>
       <View style={[isPhoneAuth ? {} : styles.auth]}>
-        {/* <Button title="Google Sign-In" onPress={} /> */}
-        {/* <TextInput
-          style={{backgroundColor: 'gray'}}
-          value={code}
-          onChangeText={text => setCode(text)}
-        />
-        <Button title="Confirm Code" onPress={() => confirmCode()} /> */}
         {isPhoneAuth ? <PhoneAuthenTication /> : <LoginForm />}
       </View>
     </View>
