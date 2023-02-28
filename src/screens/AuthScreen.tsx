@@ -43,5 +43,6 @@ const styles = StyleSheet.create({
     lineHeight: 62,
     color: white_color,
     marginTop: 80,
+    justifyContent: 'center',
   },
 });

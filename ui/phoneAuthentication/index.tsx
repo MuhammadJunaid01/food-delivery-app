@@ -1,118 +1,65 @@
 /* eslint-disable react-native/no-inline-styles */
-import {SIZES} from '@/libs/theme';
-import auth from '@react-native-firebase/auth';
-import {GoogleSignin} from '@react-native-google-signin/google-signin';
-import React, {useEffect, useRef, useState} from 'react';
+import useAuth from '@/libs/hooks/useAuth';
+import {COLORS, SIZES} from '@/libs/theme';
+import React, {useState} from 'react';
 import {
-  ImageBackground,
+  Image,
   KeyboardAvoidingView,
+  Pressable,
   StyleSheet,
   Text,
-  TouchableOpacity,
   View,
 } from 'react-native';
 import PhoneInput from 'react-native-phone-number-input';
+import OtpVerification from './OtpVarification';
+
 const PhoneAuthenTication = () => {
-  useEffect(() => {
-    GoogleSignin.configure({
-      webClientId:
-        '1002288922657-h8njnt16hluc07iuro3kv2h81qq6jlpi.apps.googleusercontent.com',
-      offlineAccess: false,
-    });
-  }, []);
+  const validDurationTime = 2 * 60 * 1000; // 2 minutes in milliseconds
+  const [phoneNumber, setPhoneNumber] = useState<any>(null);
+  const {signInWithPhoneNumber, confirmId} = useAuth();
 
-  const [confirm, setConfirm] = useState<any>('');
-  const [code, setCode] = useState('');
+  const handleLogin = (phoneumber: string, DurationTime: number) => {
+    console.log('handleLogin', phoneumber, DurationTime);
+    signInWithPhoneNumber(phoneumber);
+  };
 
-  const [initializing, setInitializing] = useState(true);
-
-  const [value, setValue] = useState('');
-  const [formattedValue, setFormattedValue] = useState('');
-  const [valid, setValid] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
-  const phoneInput = useRef<PhoneInput>(null);
-  // const [user, setUser] = useState<any>();
-
-  useEffect(() => {
-    const subscriber = auth().onAuthStateChanged(user => {
-      if (user) {
-        // User is signed in, do something
-        console.log('user', user.uid);
-      } else {
-        // User is signed out, do something else
-      }
-    });
-    return subscriber; // unsubscribe on unmount
-  }, []);
-  // Handle the button press
-  async function signInWithPhoneNumber(phoneNumber: string) {
-    const confirmation = await auth().signInWithPhoneNumber(phoneNumber);
-    setConfirm(confirmation.verificationId);
-  }
-
-  async function confirmCode() {
-    console.log('CODE', code);
-    try {
-      await confirm.confirm(code);
-      console.log('confirm', code);
-    } catch (error) {
-      console.log('Invalid code.');
-    }
-  }
-
-  // if (!confirm) {
-  //   return (
-  //     <Button
-  //       title="Phone Number Sign In"
-  //       onPress={() => signInWithPhoneNumber('+8801634900664')}
-  //     />
-  //   );
-  // }
-  console.log('text', typeof value);
-  return (
-    <View style={styles.container}>
-      <ImageBackground
-        style={{flex: 1}}
-        source={require('@/src/assets/images/login.gif')}>
+  if (confirmId) {
+    return (
+      <View style={styles.container}>
         <KeyboardAvoidingView behavior="padding">
           <PhoneInput
-            containerStyle={{
-              height: 50,
-              width: '95%',
-              borderRadius: 5,
-              marginTop: 10,
-              marginLeft: 8,
-            }}
-            textContainerStyle={{borderRadius: 5}}
-            ref={phoneInput}
-            defaultValue={value}
-            defaultCode="DM"
-            layout="first"
+            containerStyle={styles.inputContainer}
+            defaultCode="BD"
             withShadow={true}
-            onChangeText={text => {
-              setValue(text);
-            }}
             onChangeFormattedText={text => {
-              setFormattedValue(text);
+              setPhoneNumber(text);
             }}
-            withDarkTheme
+            textInputStyle={{
+              color: COLORS.white,
+              fontFamily: 'Raleway-Bold',
+            }}
+            codeTextStyle={{color: COLORS.white}}
+            textContainerStyle={{
+              backgroundColor: COLORS.Vulcan,
+            }}
             autoFocus
           />
         </KeyboardAvoidingView>
-
-        <TouchableOpacity
-          style={{
-            width: '100%',
-            backgroundColor: 'red',
-            position: 'absolute',
-            bottom: 1,
-            paddingVertical: 10,
-          }}>
-          <Text>Send</Text>
-        </TouchableOpacity>
-      </ImageBackground>
-    </View>
-  );
+        <Image
+          style={{height: 380, width: 350}}
+          source={require('../../src/assets/images/login.png')}
+        />
+        <Pressable
+          onPress={() => handleLogin(phoneNumber, validDurationTime)}
+          style={styles.btn}>
+          <Text style={{fontSize: 18, fontFamily: 'Raleway-ExtraBold'}}>
+            Login
+          </Text>
+        </Pressable>
+      </View>
+    );
+  }
+  return <OtpVerification />;
 };
 
 export default PhoneAuthenTication;
@@ -120,8 +67,25 @@ export default PhoneAuthenTication;
 const styles = StyleSheet.create({
   container: {
     // paddingVertical: 20,
-    width: SIZES.width - 50,
-    left: 27,
-    height: SIZES.height - 300,
+    borderRadius: 11,
+    width: SIZES.width,
+    // left: 27,
+    height: SIZES.height,
+    backgroundColor: COLORS.Vulcan,
+  },
+  btn: {
+    width: '90%',
+    marginLeft: 17,
+    backgroundColor: COLORS.BlueViolet,
+    paddingVertical: 13,
+    alignItems: 'center',
+    borderRadius: 10,
+  },
+  inputContainer: {
+    width: '95%',
+    borderRadius: 5,
+    backgroundColor: COLORS.Vulcan,
+    marginLeft: 8,
+    padding: 0,
   },
 });
