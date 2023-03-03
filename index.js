@@ -2,15 +2,20 @@
 /**
  * @format
  */
-import {Provider as PaperProvider} from 'react-native-paper';
-import 'react-native-gesture-handler';
+import messaging from '@react-native-firebase/messaging';
 import {AppRegistry} from 'react-native';
+import 'react-native-gesture-handler';
+import {Provider as PaperProvider} from 'react-native-paper';
 import App from './App';
 import {name as appName} from './app.json';
 
+// Register background handler
+messaging().setBackgroundMessageHandler(async remoteMessage => {
+  console.log('Message handled in the background!', remoteMessage);
+});
+
 export default function Main() {
   return (
-    // eslint-disable-next-line react/react-in-jsx-scope
     <PaperProvider>
       <App />
     </PaperProvider>

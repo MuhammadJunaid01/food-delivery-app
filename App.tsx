@@ -1,15 +1,16 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
+import {
+  notiFicationServices,
+  requestUserPermission,
+} from '@/libs/pushNotifications';
 import DrawerNavigator from '@/src/navigation/DrawerNavigator';
 import {NavigationContainer} from '@react-navigation/native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import 'react-native-gesture-handler';
 function App() {
+  useEffect(() => {
+    requestUserPermission();
+    notiFicationServices();
+  }, []);
   return (
     <NavigationContainer>
       <DrawerNavigator />

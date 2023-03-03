@@ -1,9 +1,10 @@
-import auth from '@react-native-firebase/auth';
+import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 import {useEffect, useState} from 'react';
+// export const MyContext = createContext();
 
 export default function useAuth() {
-  const [user, setUser] = useState<any>(undefined);
+  const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
   const [isLogedIn, setIsLogedIn] = useState<boolean>(true);
   const [confirmId, setConfirmId] = useState<any>('');
   const [code, setCode] = useState('');
@@ -61,5 +62,6 @@ export default function useAuth() {
     setCode,
     confirmCode,
     code,
+    user,
   };
 }

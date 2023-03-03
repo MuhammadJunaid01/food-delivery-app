@@ -3,7 +3,7 @@ import {COLORS} from '@/libs/theme';
 import LoginForm from '@/ui/login';
 import PhoneAuthenTication from '@/ui/phoneAuthentication';
 import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 
 export default function AuthScreen({}) {
   const [isLoging, setIsLoging] = useState<boolean>(false);
@@ -13,6 +13,16 @@ export default function AuthScreen({}) {
       <Text style={styles.headingText}>Welcome {isLoging && 'back'} </Text>
       <View style={[isPhoneAuth ? {} : styles.auth]}>
         {isPhoneAuth ? <PhoneAuthenTication /> : <LoginForm />}
+      </View>
+      <View style={styles.icons}>
+        <Image
+          style={styles.icon}
+          source={require('@/src/assets/images/social/google.png')}
+        />
+        <Image
+          style={styles.icon}
+          source={require('@/src/assets/images/social/gmail.png')}
+        />
       </View>
     </View>
   );
@@ -37,5 +47,16 @@ const styles = StyleSheet.create({
     color: white_color,
     marginTop: 80,
     justifyContent: 'center',
+  },
+  icons: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    gap: 20,
+    marginTop: 11,
+  },
+
+  icon: {
+    height: 30,
+    width: 30,
   },
 });

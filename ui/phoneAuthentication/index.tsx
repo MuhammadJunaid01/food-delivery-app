@@ -46,7 +46,7 @@ const PhoneAuthenTication = () => {
           />
         </KeyboardAvoidingView>
         <Image
-          style={{height: 380, width: 350}}
+          style={{height: 300, width: 350}}
           source={require('../../src/assets/images/login.png')}
         />
         <Pressable
@@ -56,6 +56,7 @@ const PhoneAuthenTication = () => {
             Login
           </Text>
         </Pressable>
+        <Image source={require('../../src/assets/images/social/gmail.png')} />
       </View>
     );
   }
